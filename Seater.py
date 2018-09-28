@@ -13,6 +13,6 @@ def seater(noOfPlayers):
         print ("Table 2: " , Player[1::2])
         print ("Player", Player[1] , "is Dealer.")
     else:
-        print(*Player)
+        print(Player[::])
         print(Player[0], "is Dealer.")
     
