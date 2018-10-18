@@ -2,12 +2,10 @@ import random, math
 
 def seater(noOfPlayers,MaxPPT):
     Player = []
-    counter = 0
-    while counter != noOfPlayers:
+    while len(Player) != noOfPlayers:
         name = input("Name of Player: ")
         Player.append(name)
-        print("Player", Player[counter], "added.\nPlayers playing:", Player)
-        counter += 1
+        print("Player", Player[len(Player)-1], "added.\nPlayers playing:", Player)
     random.shuffle(Player)
     NoTables = math.ceil(len(Player)/MaxPPT)
         
