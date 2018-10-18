@@ -1,19 +1,16 @@
-import random
+import random, math
+
 def seater(noOfPlayers):
     Player = []
     counter = 0
     while counter != noOfPlayers:
         name = input("Name of Player: ")
         Player.append(name)
-        print("Player", Player[counter], "added.\n Players playing:", Player)
+        print("Player", Player[counter], "added.\nPlayers playing:", Player)
         counter += 1
     random.shuffle(Player)
-    if len(Player) >= 9:
-        print ("Table 1: " , Player[::2])
-        print ("Player", Player[0] , "is Dealer.")
-        print ("Table 2: " , Player[1::2])
-        print ("Player", Player[1] , "is Dealer.")
-    else:
-        print(Player[::])
-        print(Player[0], "is Dealer.")
-    
+    NoTables = math.ceil(len(Player)/9)
+        
+    for x in range(0,NoTables):
+        print ("Table ",x+1,": " , Player[x::NoTables])
+        print ("Player", Player[x] , "is Dealer.")
