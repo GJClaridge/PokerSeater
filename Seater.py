@@ -1,6 +1,6 @@
 import random, math
 
-def seater(noOfPlayers):
+def seater(noOfPlayers,MaxPPT):
     Player = []
     counter = 0
     while counter != noOfPlayers:
@@ -9,7 +9,7 @@ def seater(noOfPlayers):
         print("Player", Player[counter], "added.\nPlayers playing:", Player)
         counter += 1
     random.shuffle(Player)
-    NoTables = math.ceil(len(Player)/9)
+    NoTables = math.ceil(len(Player)/MaxPPT)
         
     for x in range(0,NoTables):
         print ("Table ",x+1,": " , Player[x::NoTables])
