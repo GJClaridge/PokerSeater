@@ -5,8 +5,9 @@ def seater(noOfPlayers):
     while counter != noOfPlayers:
         name = input("Name of Player: ")
         Player.append(name)
+        print("Player", Player[counter], "added.\n Players playing:", Player)
         counter += 1
-        random.shuffle(Player)
+    random.shuffle(Player)
     if len(Player) >= 9:
         print ("Table 1: " , Player[::2])
         print ("Player", Player[0] , "is Dealer.")
